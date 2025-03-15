@@ -2,7 +2,7 @@
     import { onMount } from 'svelte';
     import moment from 'moment';
     import 'moment/locale/ja';
-    import PackCard from './PackCard.svelte';
+    import PackCard from './done/PackCard.svelte';
     export let config;
 
     let packs = [];

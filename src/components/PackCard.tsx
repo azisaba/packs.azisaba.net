@@ -1,6 +1,10 @@
 import { PackCardProps } from "../types/PackCardProps"
+import CachedIcon from '@mui/icons-material/Cached'
+import CheckIcon from '@mui/icons-material/Check'
+import DownloadIcon from '@mui/icons-material/Download'
+import "./PackCard.css"
 
-export const PackCard: React.FC<PackCardProps> = (props) => {
+export const PackCard: React.FC<{props: PackCardProps}> = ({props}) => {
     return (<div className='card'>
         <div>
             <div className='pic'>
@@ -14,17 +18,17 @@ export const PackCard: React.FC<PackCardProps> = (props) => {
         <div>
             <div className='details'>
                 <span>
-                    <Icon data={refresh}/>
+                    <CachedIcon />
                     <span className='with-icon'>{props.last_updated}</span>
                 </span>
                 <span>
-                    <Icon data={check}/>
+                    <CheckIcon />
                     <span className='with-icon'>{props.supported}</span>
                 </span>
             </div>
             <div className='download'>
                 <span>
-                    <Icon data={download}/>
+                    <DownloadIcon />
                     <a href={props.download_url} className='with-icon'>ダウンロード</a>
                 </span>
             </div>
