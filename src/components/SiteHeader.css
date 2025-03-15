@@ -7,5 +7,6 @@ div.header {
 }
 
 h1 {
+    font-size: 2rem;
     -webkit-text-stroke: 1px black;
 }
