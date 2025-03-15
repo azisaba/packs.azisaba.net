@@ -3,17 +3,31 @@ import "./PackList.css"
 import { PackCard } from "./PackCard"
 import { PackCardProps } from "../types/PackCardProps"
 import { timeAgo } from "../util/TimeUtil"
+import config from "../assets/config.json"
+import { Release } from "../types/github/GithubResponse"
+
+function getReleaseApiUrl(suffix: string = ""): string {
+    return config.ghReleaseApiUrl.replace("${suffix}", suffix)
+}
 
 const PackList: React.FC = () => {
-    const [isLoading, setIsLoading] = useState(true)
+    // const [isLoading, setIsLoading] = useState(true)
     // useEffect(() => {})
-    setTimeout(() => {
-        setIsLoading(false)
-    }, 1000)
+    // setTimeout(() => {
+    //     setIsLoading(false)
+    // }, 1000)
 
-    if(isLoading) {
-        return <div>Now Loading....</div>
-    }
+    // if(isLoading) {
+    //     return <div>Now Loading....</div>
+    // }
+
+    setTimeout(async () => {
+        // const data = await (await fetch(config.ghReleaseApiUrl))
+        const data: Release = await (await fetch(getReleaseApiUrl())).json()
+        data.assets.map(asset => {
+            const name = asset.name.replace(/\.[^/.]+$/, '')
+        })
+    }, 100)
 
     const exampleProp = {
         icon: "https://github.com/azisaba/resourcepacks/blob/main/despawn/pack.png?raw=true",

@@ -1,6 +1,10 @@
 {
-    "ghReleaseApiUrl": "https://api.github.com/repos/azisaba/resourcepacks/releases/latest",
+    "ghReleaseApiUrl": "https://api.github.com/repos/azisaba/resourcepacks${suffix}/releases/latest",
     "ghRawBaseUrl": "https://raw.githubusercontent.com/azisaba/resourcepacks/main",
+    "additionalPacks": [
+        "lgw2",
+        "rcpve"
+    ],
     "packVersions": {
         "1": "1.6.1-1.8.9",
         "2": "1.9-1.10.2",
@@ -20,9 +24,5 @@
         "34": "1.21-1.21.1",
         "42": "1.21.2-1.21.3",
         "46": "1.21.4"
-    },
-    "additionalPacks": [
-        "lgw2",
-        "rcpve"
-    ]
+    }
 }
