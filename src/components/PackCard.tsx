@@ -2,38 +2,8 @@ import { PackCardProps } from "../types/PackCardProps"
 import CachedIcon from '@mui/icons-material/Cached'
 import CheckIcon from '@mui/icons-material/Check'
 import DownloadIcon from '@mui/icons-material/Download'
-import "./PackCard.css"
 
 export const PackCard: React.FC<{ props: PackCardProps }> = ({ props }) => {
-    // return (<div className='card flex'>
-    //     <div>
-    //         <div className='pic flex'>
-    //             <img src={props.icon} alt={`${props.name}のアイコン`} />
-    //         </div>
-    //         <div className='title flex'>
-    //             <span><b>{props.name}</b></span>
-    //             <span>{props.description}</span>
-    //         </div>
-    //     </div>
-    //     <div>
-    //         <div className='details flex'>
-    //             <span>
-    //                 <CachedIcon />
-    //                 <span className='with-icon flex'>{props.last_updated}</span>
-    //             </span>
-    //             <span>
-    //                 <CheckIcon />
-    //                 <span className='with-icon flex'>{props.supported}</span>
-    //             </span>
-    //         </div>
-    //         <div className='download flex'>
-    //             <span>
-    //                 <DownloadIcon />
-    //                 <a href={props.download_url} className='with-icon flex'>ダウンロード</a>
-    //             </span>
-    //         </div>
-    //     </div>
-    // </div>)
     return (
         <div className="flex border-l-2 border-b-2 pb-5 pl-5">
             <div className="head flex">
