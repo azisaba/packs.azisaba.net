@@ -33,17 +33,6 @@
     });
 </script>
 
-<style>
-    div {
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
-    div > .outer {
-        padding: 20px;
-    }
-</style>
-
 <div>
     {#each packs as pack}
         <div class='outer'>

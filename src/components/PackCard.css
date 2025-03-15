@@ -2,7 +2,7 @@ span {
     margin: 3px 0;
 }
 
-div {
+.flex {
     display: flex;
 }
 
@@ -28,6 +28,7 @@ div {
 .title {
     flex-direction: column;
     justify-content: center;
+    align-self: center;
 }
 
 .details {
