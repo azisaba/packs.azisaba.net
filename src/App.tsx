@@ -1,11 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { timeAgo } from './util/TimeUtil'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <div className='grid justify-center'>
@@ -25,7 +22,7 @@ function App() {
             <span className='flex ml-auto'>
               <div className='content-end'>
                 <p>a</p>
-                <p>b</p>
+                <p>last Updated: {timeAgo(new Date("2025-03-13T15:30:17Z"))}</p>
               </div>
               <div className='content-center'>Download</div>
             </span>
