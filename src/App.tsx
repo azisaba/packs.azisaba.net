@@ -1,4 +1,3 @@
-import './App.css'
 import PackList from './components/PackList'
 import SiteHeader from './components/SiteHeader'
 
