@@ -20,5 +20,5 @@ export function timeAgo(date: Date): string {
         value = Math.floor(value / divider);
     }
 
-    return ''; // 必要ない場合は、この行を除去できます。
+    return '';
 }

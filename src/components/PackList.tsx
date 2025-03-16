@@ -1,22 +1,13 @@
 import { useState, useEffect } from "react"
-import "./PackList.css"
 import { PackCard } from "./PackCard"
 import { PackCardProps } from '../types/PackCardProps';
 import { timeAgo } from "../util/TimeUtil"
-import config from "../assets/config.json"
 import { Release } from "../types/github/GithubResponse"
 import { PackMeta } from "../types/minecraft/PackMeta";
-import { GeneralConfig } from '../types/config/Config';
-
-const generalConfig: GeneralConfig = config as GeneralConfig;
-
-function getReleaseApiUrl(suffix: string = ""): string {
-    return config.ghReleaseApiUrl.replace("${suffix}", suffix);
-}
-
-function getCachedImageUrl(image_url: string): string {
-    return `https://images.weserv.nl/?url=${image_url}&w=128&output=webp`;
-}
+import { generalConfig } from "../util/Config";
+import { getReleaseApiUrl } from "../api/GithubApi";
+import { getCachedImageUrl } from "../api/WsrvnlApi";
+import "./PackList.css"
 
 const PackList: React.FC = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -30,7 +21,7 @@ const PackList: React.FC = () => {
                     const name = asset.name.replace(/\.[^/.]+$/, '');
                     return {
                         name: name,
-                        icon: getCachedImageUrl(`${config.ghRawBaseUrl}/${name}/pack.png`),
+                        icon: getCachedImageUrl(`${generalConfig.ghRawBaseUrl}/${name}/pack.png`),
                         download_url: asset.browser_download_url,
                         last_updated: timeAgo(new Date(asset.updated_at))
                     };
@@ -38,7 +29,7 @@ const PackList: React.FC = () => {
 
                 const packsData = await Promise.all(
                     packraws.map(async pack => {
-                        const mcmeta: PackMeta = await (await fetch(`${config.ghRawBaseUrl}/${pack.name}/pack.mcmeta`)).json();
+                        const mcmeta: PackMeta = await (await fetch(`${generalConfig.ghRawBaseUrl}/${pack.name}/pack.mcmeta`)).json();
                         return {
                             ...pack,
                             description: mcmeta.pack.description,
