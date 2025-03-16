@@ -5,13 +5,10 @@ import SiteHeader from './components/SiteHeader'
 function App() {
   
   return (
-    <>
+    <div>
       <SiteHeader />
-      {/* <div className='outer'>
-        <PackCard props={exampleProp}/>
-      </div> */}
       <PackList />
-    </>
+    </div>
   )
 }
 
