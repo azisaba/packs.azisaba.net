@@ -7,7 +7,6 @@ import { PackMeta } from "../types/minecraft/PackMeta";
 import { generalConfig } from "../util/Config";
 import { getReleaseApiUrl } from "../api/GithubApi";
 import { getCachedImageUrl } from "../api/WsrvnlApi";
-import "./PackList.css"
 
 const PackList: React.FC = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -53,21 +52,11 @@ const PackList: React.FC = () => {
         return <div>Now Loading....</div>;
     }
 
-    const exampleProp: PackCardProps = {
-        icon: "https://github.com/azisaba/resourcepacks/blob/main/despawn/pack.png?raw=true",
-        name: "conflict",
-        last_updated: timeAgo(new Date("2025-03-13T15:30:17Z")),
-        download_url: "https://github.com/azisaba/resourcepacks/releases/download/action-v9229/conflict.zip",
-        description: "none",
-        supported: "1.10.2"
-    };
-
     return (
-        <div className="outer">
+        <div className="outer max-w-[1000px] mx-auto p-5">
             {packs.map((pack, i) => (
                 <PackCard key={i} props={pack} />
             ))}
-            <PackCard props={exampleProp} />
         </div>
     );
 }

@@ -1,8 +1,0 @@
-div.outer {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-div > .outer {
-    padding: 20px;
-}
