@@ -26,7 +26,7 @@ export const PackCard: React.FC<{ props: PackCardProps }> = ({ props }) => {
                 </div>
                 <div className="download pl-5 content-center">
                     <DownloadIcon />
-                    <a href={props.download_url}>ダウンロード</a>
+                    <a href={props.download_url} className="text-blue-500 hover:underline underline-offset-4 visited:text-blue-800">ダウンロード</a>
                 </div>
             </div>
         </div>
