@@ -6,8 +6,8 @@ import DownloadIcon from '@mui/icons-material/Download'
 export const PackCard: React.FC<{ props: PackCardProps }> = ({ props }) => {
     return (
         <div className="flex border-l-2 border-b-2 p-5 my-4 justify-between">
-            <div className="head flex">
-                <img className="min-h-32" src={props.icon} />
+            <div className="head flex min-h-32 items-center">
+                <img src={props.icon} alt={`${props.name}のアイコン`}/>
                 <div className="content-center pl-5 min-w-auto">
                     <div className="font-bold">{props.name}</div>
                     <div>{props.description}</div>
