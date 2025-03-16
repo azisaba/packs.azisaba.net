@@ -5,7 +5,7 @@ import SiteHeader from './components/SiteHeader'
 function App() {
   
   return (
-    <div>
+    <div className='font-sans'>
       <SiteHeader />
       <PackList />
     </div>
