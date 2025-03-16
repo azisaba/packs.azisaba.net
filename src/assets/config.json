@@ -1,6 +1,6 @@
 {
     "ghReleaseApiUrl": "https://api.github.com/repos/azisaba/resourcepacks${suffix}/releases/latest",
-    "ghRawBaseUrl": "https://raw.githubusercontent.com/azisaba/resourcepacks/main",
+    "ghRawBaseUrl": "https://raw.githubusercontent.com/azisaba/resourcepacks${suffix}/main",
     "additionalPacks": [
         "lgw2",
         "rcpve"

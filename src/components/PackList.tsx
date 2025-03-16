@@ -9,7 +9,7 @@ const PackList: React.FC = () => {
 
     useEffect(() => {
         fetchPacks().then(packs => {
-            setPacks(packs)
+            setPacks(Array.from(packs.values()))
             setIsLoading(false)
         }).catch(error => {
             console.error("Failed to fetch packs:", error);
