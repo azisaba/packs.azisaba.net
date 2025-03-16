@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { PackCard } from "./PackCard"
 import { PackCardProps } from '../types/PackCardProps';
 import { fetchPacks } from "../util/PackUtil";
+import { FadeLoader } from "react-spinners";
 
 const PackList: React.FC = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +19,9 @@ const PackList: React.FC = () => {
     }, []);
 
     if (isLoading) {
-        return <div>Now Loading....</div>;
+        return <div className="flex justify-center items-center min-h-[400px] py-10">
+            <FadeLoader speedMultiplier={2}/>
+        </div>;
     }
 
     return (
